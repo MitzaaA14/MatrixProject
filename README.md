@@ -1,17 +1,15 @@
-## Matrix Draw Project
-Introduction to Robotics (2025-2026)
+## Matrix Draw Project Introduction to Robotics (2025-2026)
 
-This repo contains the laboratory matrix project developed for Introduction to Robotics course during 2025-2026 academic year at the Faculty of Mathematics and Informatics, University of Bucharest, Computer Science domain. Each checkpoint includes code, implementation, explanations and additional resources (images, experimental results, videos).
+ The laboratory matrix project created for the Introduction to Robotics course at the University of Bucharest's Faculty of Mathematics and Informatics in the Computer Science domain during the 2025–2026 academic year is included in this repository.  Code, implementation, explanations, and extra resources (pictures, test results, videos) are all included in each checkpoint.
 
-<details>
-<summary><h2>Checkpoint #1 - LED Matrix Drawing System</h2></summary>
+ <details> <summary><h2> Checkpoint #1: LED Matrix Drawing System
 
-Matrix Draw is an LED drawing application that allows users to create pixel art on an 8x8 LED matrix using:
+ Matrix Draw is an LED drawing application that allows users to create pixel art on an 8x8 LED matrix using:
 
-- Joystick controller. 
-- Multiple LED states (fixed, slow blink, fast blink)
-- Menu system displayed on an LCD screen
-- Audio feedback through a buzzer
+ - The joystick controller
+ - A menu system that is shown on an LCD screen;
+ - several LED states (fixed, slow blink, fast blink)
+ - A buzzer that provides audio feedback
 
 # Task Requirements:
 Design and implement an interactive matrix project with the following features:
@@ -32,7 +30,7 @@ Design and implement an interactive matrix project with the following features:
 - Joystick Module : User input (menu navigation and drawing on matrix)
 - Buzzer : Audio feedback
 - Resistors : 220Ω for LCD and 100kΩ for matrix MAX7219	
-- LCD contrast and connections
+- LCD connections and contrast
 - Wires : Circuit connections
 
 # Pin Configuration:
@@ -62,34 +60,33 @@ Joystick:
 
 # System Features:
 
-Main Menu:
+ Main Menu:
 
-Three options for the menu:
+ Three options for the menu:
 
-1. Start Game - Drawing mode where you can create pixel art
-2. Clear Draw - Clears the entire drawing
-3. About - Project information
+ 1. Start Game - Drawing mode where you can create pixel art
+ 2. Clear Draw - Clears the entire drawing
+ 3. About: Details about the project
 
-Navigation:
+ Navigation:  
 
-1. Joystick Up/Down -  Navigate between menu items
-2. Button Press -  Select current menu option
-3. Visual cursor indicator blinks to show selected option
+ 1. Joystick Up/Down - Navigate between menu items
+ 2. Press the button to choose the current menu item.
+ 3. Visual cursor indicator blinks to show selected option
 
-Draw Mode:
+ Draw Mode:
 
--  If option Start Game is selected, the system enters interactive drawing mode:
+ - The system goes into interactive drawing mode if the Start Game option is chosen:
 
-Controls:
-1. Joystick->Move cursor on 8x8 matrix
-2. Short Button Press->Cycle through LED states at cursor position
-3. Long Press (3 seconds)->Exit to menu
+ 1. Joystick->Cursor movement on an 8x8 matrix
+ 2. Press the short button to cycle through the LED states at the cursor position.
+ 3. Long Press (3 seconds)-> Exit to menu
 
-LED States:
-1. OFF - LED is turned off
-2. FIXED - LED is constantly on
-3. SLOW - LED blinks slowly
-4. FAST - LED blinks rapidly
+ LED Conditions:
+ 1. OFF: The LED is not on.
+ 2. FIXED: The LED is always on 
+ 3. SLOW: The LED blinks slowly
+ 4. FAST: The LED blinks quickly.
 
 Display Information (in Drawing mode):
 - "DRAW MODE"
@@ -117,7 +114,7 @@ System States:
 
 2. Main Menu
 -  Shows menu options with blinking cursor indicator
--  Displays current drawing on the matrix
+-  Current drawings are shown on the matrix; 
 -  Joystick navigation
 
 3. Draw Mode
@@ -126,25 +123,25 @@ System States:
 -  LED animations
 
 4. Message Display
--  Temporary screens for "Drawing cleared!" and "About" information
--  Returns to menu after set duration
+-  Temporary "Drawing cleared!" and "About" screens that return to the menu after a predetermined amount of time
 
 Code Architecture:
 Key Functions:
--  setup() : Initialize all components and display splash screen
--  loop() : Main loop handling timing and state management
+-  setup() : Initializes every component and shows the splash screen
+-  loop() : Main loop that manages timing and states
 -  showMenu() : Display and update menu on LCD
 -  menuLoop() : Handle menu navigation and selection
--  startGame() : Initialize draw mode
--  gameLoop() : Handle drawing interactions and cursor movement
--  updateMatrix() : Refresh LED matrix based on current states
+-  startGame() : Set up the game's draw mode
+-  gameLoop() : Manage cursor movement and drawing interactions
+-  updateMatrix() : Update the LED matrix according to the display's current
 -  displayDrawing() : Show drawing while in menu
--  updateDisplay() : Update LCD with cursor info and LED state
--  clearAll() : Reset all LEDs to OFF state
+-  updateDisplay() : Update the LCD with cursor information
+-  clearAll() : Turn off all of the LEDs
 -  showAbout() : Display project information
 
-Non-Blocking Timing
-All timing operations use millis() to avoid blocking delays:
+Non-Blocking Timing:
+To prevent blocking delays, millis() is used in all timing operations:
+
 -  Blink timers for LED states
 -  Cursor blink timer for menu and draw mode
 -  Timers for joystick and button inputs
