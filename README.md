@@ -8,7 +8,7 @@
 
 Matrix Draw is an LED drawing application that allows users to create pixel art on an 8x8 LED matrix using:
 - The joystick controller
-- A menu system that is shown on an LCD screen;
+- A menu system that is shown on an LCD screen
 - several LED states (fixed, slow blink, fast blink)
 - A buzzer that provides audio feedback
 
@@ -151,6 +151,11 @@ To prevent blocking delays, millis() is used in all timing operations:
 
 
 # Physical Implementation Checkpoint #1
+
+![IMG_4957](https://github.com/user-attachments/assets/04d9cae8-de4f-475b-bbc1-be4b2ff94a30)
+![IMG_4959](https://github.com/user-attachments/assets/00bdc518-92e2-44da-8865-cf4cc94d921f)
+![IMG_4958](https://github.com/user-attachments/assets/3de3168b-7126-4b71-a954-ca5040e61359)
+
 
 # Video Demonstration
 
