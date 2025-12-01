@@ -507,7 +507,7 @@ void showAbout() {
   analogWrite(pinLcdContrast, lcdContrastNormal);
   
   lcd.clear();
-  lcd.print("Matrix Draw v2");
+  lcd.print("Matrix Draw");
   lcd.setCursor(0, 1);
   lcd.print("Lab Project 2024");
   
