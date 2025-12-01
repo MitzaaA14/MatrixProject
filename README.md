@@ -48,16 +48,16 @@ LCD Display:
 -  Enable->Pin 8
 -  D4->Pin 7
 -  D5->Pin 6
--  D6->Pin 5
--  D7->Pin 4
--  Contrast (PWM)->Pin 3
+-  D6->Pin 4
+-  D7->Pin 2
+-  Contrast (PWM)->Pin 5
 
 Joystick:
 -  VRx (X- axis)->A0
 -  VRy (Y- axis)->A1
 -  Button->A2
 
--  Buzzer->Pin 2
+-  Buzzer->Pin 3
 
 # System Features:
 

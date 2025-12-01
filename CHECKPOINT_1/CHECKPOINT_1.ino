@@ -3,8 +3,6 @@
   CHECKPOINT #1
   Drawing game using Joystick and LCD menu display
 */
-
-
 #include <LiquidCrystal.h>
 #include "LedControl.h"
 
@@ -18,9 +16,9 @@ const byte pinLcdRs = 9;
 const byte pinLcdEnable = 8;
 const byte pinLcdD4 = 7;
 const byte pinLcdD5 = 6;
-const byte pinLcdD6 = 5;
-const byte pinLcdD7 = 4;
-const byte pinLcdContrast = 3;
+const byte pinLcdD6 = 4;
+const byte pinLcdD7 = 2;
+const byte pinLcdContrast = 5;
 
 // Joystick pins
 const byte pinJoystickVrx = A0;
@@ -28,11 +26,11 @@ const byte pinJoystickVry = A1;
 const byte pinJoystickSelect = A2;
 
 // Buzzer
-const byte pinBuzzer = 2;
+const byte pinBuzzer = 3;
 
 // LCD constants
-const byte lcdContrastNormal = 100;
-const byte lcdContrastDim = 10;
+const byte lcdContrastNormal = 90; 
+const byte lcdContrastDim = 90;
 const byte lcdCols = 16;
 const byte lcdRows = 2;
 
@@ -127,7 +125,10 @@ void setup() {
   analogWrite(pinLcdContrast, lcdContrastNormal);
   
   pinMode(pinJoystickSelect, INPUT_PULLUP);
+  
   pinMode(pinBuzzer, OUTPUT);
+  digitalWrite(pinBuzzer, LOW);
+  noTone(pinBuzzer);  
   
   lcd.begin(lcdCols, lcdRows);
   lcd.clear();
@@ -191,7 +192,7 @@ void loop() {
     cursorBlinkState = !cursorBlinkState;
     lastCursorBlink = currentTime;
     
-    if(!inGame) {
+    if(!inGame && !showingMessage) {
       showMenu();
     }
   }
@@ -206,8 +207,6 @@ void loop() {
 
 // Displays menu with current selection
 void showMenu() {
-  analogWrite(pinLcdContrast, lcdContrastNormal);
-  
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("=== MENU ===");
@@ -231,8 +230,6 @@ void showMenu() {
 
 // Handles menu navigation and selection
 void menuLoop() {
-  analogWrite(pinLcdContrast, lcdContrastNormal);
-  
   static unsigned long lastAction = 0;
   unsigned long currentTime = millis();
   
@@ -283,8 +280,6 @@ void menuLoop() {
 
 // Enters draw mode and initializes cursor
 void startGame() {
-  analogWrite(pinLcdContrast, lcdContrastNormal);
-  
   inGame = true;
   cursorX = initialCursorX;
   cursorY = initialCursorY;
@@ -296,8 +291,6 @@ void startGame() {
 
 // Handles cursor movement and LED state toggling
 void gameLoop() {
-  analogWrite(pinLcdContrast, lcdContrastNormal);
-  
   static unsigned long lastMove = 0;
   static unsigned long btnPressStartTime = 0;
   static bool btnWasPressed = false;
@@ -334,8 +327,8 @@ void gameLoop() {
     
     if(moved) {
       tone(pinBuzzer, toneMove, toneDurationShort);
-      updateDisplay();
       lastMove = currentTime;
+      updateDisplay();
     }
   }
   
@@ -356,7 +349,6 @@ void gameLoop() {
       lastVry = analogRead(pinJoystickVry);
       
       static unsigned long exitStartTime = 0;
-      static bool waitingToExit = true;
       exitStartTime = currentTime;
       
       // Wait before returning to menu
@@ -455,8 +447,6 @@ void displayDrawing() {
 
 // Updates LCD with cursor position and LED state
 void updateDisplay() {
-  analogWrite(pinLcdContrast, lcdContrastNormal);
-  
   lcd.setCursor(0, 1);
   lcd.print("                ");
   lcd.setCursor(0, 1);
@@ -485,7 +475,7 @@ void updateDisplay() {
 
 // Clears all LEDs from drawing
 void clearAll() {
-  analogWrite(pinLcdContrast, lcdContrastDim);
+  showingMessage = true;
   
   for(int i = 0; i < matrixSize; i++) {
     for(int j = 0; j < matrixSize; j++) {
@@ -499,17 +489,14 @@ void clearAll() {
   tone(pinBuzzer, toneClear, toneDurationClear);
   
   messageStartTime = millis();
-  showingMessage = true;
 }
 
 // Displays about information
 void showAbout() {
-  analogWrite(pinLcdContrast, lcdContrastNormal);
-  
   lcd.clear();
   lcd.print("Matrix Draw");
   lcd.setCursor(0, 1);
-  lcd.print("Lab Project 2024");
+  lcd.print("Lab Project 2025");
   
   messageStartTime = millis();
   showingMessage = true;
