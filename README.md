@@ -4,7 +4,7 @@
 
 
 <details> 
-<summary><h2> Checkpoint #1: LED Matrix Drawing System
+<summary><h2> Checkpoint #1: LED Matrix Drawing System</h2></summary>
 
 Matrix Draw is an LED drawing application that allows users to create pixel art on an 8x8 LED matrix using:
 - The joystick controller
