@@ -48,16 +48,16 @@ LCD Display:
 -  Enable->Pin 8
 -  D4->Pin 7
 -  D5->Pin 6
--  D6->Pin 4
--  D7->Pin 2
--  Contrast (PWM)->Pin 5
+-  D6->Pin 5
+-  D7->Pin 4
+-  Contrast (PWM)->Pin 3
 
 Joystick:
 -  VRx (X- axis)->A0
 -  VRy (Y- axis)->A1
 -  Button->A2
 
--  Buzzer->Pin 3
+-  Buzzer->Pin 2
 
 # System Features:
 
@@ -152,12 +152,12 @@ To prevent blocking delays, millis() is used in all timing operations:
 
 # Physical Implementation Checkpoint #1
 
-![IMG_4957](https://github.com/user-attachments/assets/04d9cae8-de4f-475b-bbc1-be4b2ff94a30)
-![IMG_4959](https://github.com/user-attachments/assets/00bdc518-92e2-44da-8865-cf4cc94d921f)
-![IMG_4958](https://github.com/user-attachments/assets/3de3168b-7126-4b71-a954-ca5040e61359)
-
+<img width="579" height="760" alt="Screenshot 2025-12-01 at 17 08 52" src="https://github.com/user-attachments/assets/8477afb4-51f0-4208-9ad7-c85690e8ece6" />
+<img width="973" height="736" alt="Screenshot 2025-12-01 at 17 09 03" src="https://github.com/user-attachments/assets/327b9e30-196e-42ad-b16f-e699a9f0a0e0" />
+<img width="973" height="736" alt="Screenshot 2025-12-01 at 17 09 09" src="https://github.com/user-attachments/assets/43beabde-8739-4edf-8c3e-44b6f6cf6b82" />
 
 # Video Demonstration
 
+ https://youtu.be/-X2TxVpON-k?si=WHG6nfVh5Rvq6QeS
 
 </details>
