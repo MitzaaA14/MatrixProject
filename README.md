@@ -1,16 +1,16 @@
 ## Matrix Draw Project
-Introduction to Robotics (2025- 2026)
+Introduction to Robotics (2025-2026)
 
-This repository contains the Matrix Draw project developed for the Introduction to Robotics course during the 2025- 2026 academic year at the Faculty of Mathematics and Informatics, University of Bucharest, Computer Science domain.
+This repository contains the Matrix Draw project developed for the Introduction to Robotics course during the 2025-2026 academic year at the Faculty of Mathematics and Informatics, University of Bucharest, Computer Science domain.
 
 <details>
-<summary><h2>Checkpoint #1 - Interactive LED Matrix Drawing System</h2></summary>
+<summary><h2>Checkpoint #1 - LED Matrix Drawing System</h2></summary>
 
-Matrix Draw is an interactive LED drawing application that allows users to create pixel art on an 8x8 LED matrix using:
+Matrix Draw is an LED drawing application that allows users to create pixel art on an 8x8 LED matrix using:
 
 - Joystick controller. 
 - Multiple LED states (fixed, slow blink, fast blink)
-- Intuitive menu system displayed on an LCD screen
+- Menu system displayed on an LCD screen
 - Audio feedback through a buzzer
 
 # Task Requirements:
@@ -39,26 +39,26 @@ Design and implement an interactive matrix project with the following features:
 
 LED Matrix:
 
--  DIN -> Pin 12
--  CLOCK -> Pin 11
--  LOAD -> Pin 10
+-  DIN->Pin 12
+-  CLOCK->Pin 11
+-  LOAD->Pin 10
 
 LCD Display:
 
--  RS -> Pin 9
--  Enable -> Pin 8
--  D4 -> Pin 7
--  D5 -> Pin 6
--  D6 -> Pin 5
--  D7 -> Pin 4
--  Contrast (PWM) -> Pin 3
+-  RS->Pin 9
+-  Enable->Pin 8
+-  D4->Pin 7
+-  D5->Pin 6
+-  D6->Pin 5
+-  D7->Pin 4
+-  Contrast (PWM)->Pin 3
 
 Joystick:
--  VRx (X- axis) -> A0
--  VRy (Y- axis) -> A1
--  Button -> A2
+-  VRx (X- axis)->A0
+-  VRy (Y- axis)->A1
+-  Button->A2
 
--  Buzzer -> Pin 2
+-  Buzzer->Pin 2
 
 # System Features:
 
@@ -81,19 +81,19 @@ Draw Mode:
 -  Once "Start Game" is selected, the system enters interactive drawing mode:
 
 Controls:
-1. Joystick -> Move cursor on 8x8 matrix
-2. Short Button Press -> Cycle through LED states at cursor position
-3. Long Press (3 seconds) -> Exit to menu
+1. Joystick->Move cursor on 8x8 matrix
+2. Short Button Press->Cycle through LED states at cursor position
+3. Long Press (3 seconds)->Exit to menu
 
 LED States:
-1. OFF -  LED is turned off
-2. FIXED -  LED is constantly on
-3. SLOW -  LED blinks slowly
-4. FAST -  LED blinks rapidly
+1. OFF - LED is turned off
+2. FIXED - LED is constantly on
+3. SLOW - LED blinks slowly
+4. FAST - LED blinks rapidly
 
-Display Information:
--  Line 1: "DRAW MODE"
--  Line 2: Current cursor position (X, Y) and LED state
+Display Information (in Drawing mode):
+- "DRAW MODE"
+- Current cursor position (X, Y) and LED state
 
 Audio Feedback:
 The buzzer provides distinct tones for different actions:
@@ -105,9 +105,9 @@ The buzzer provides distinct tones for different actions:
 -  Exit draw mode
 
 Visual Feedback:
--  Cursor Blinking -  Indicates current position in menu and draw mode
--  LCD Contrast -  Adjusts for optimal visibility (normal/dim modes)
--  Matrix Blinking -  Two independent blink rates for creative patterns
+-  Cursor Blinking - Indicates current position in menu and draw mode
+-  LCD Contrast - Adjusts for optimal visibility (normal/dim modes)
+-  Matrix Blinking - Two independent blink rates for creative patterns
 
 System States:
 
@@ -153,10 +153,8 @@ All timing operations use millis() to avoid blocking delays:
 
 
 Physical Implementation Checkpoint #1
-[Include photos of your physical setup here]
 
 Video Demonstration
-[Link to your YouTube video showing the project in action]
 
 
 Matrix Draw successfully implements an interactive LED matrix drawing system with intuitive joystick control, multiple LED states, and comprehensive menu navigation. The project demonstrates proficiency in hardware integration, non- blocking programming techniques, and user interface design on embedded systems.
