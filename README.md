@@ -61,33 +61,34 @@ Joystick:
 
 # System Features:
 
- Main Menu:
+Main Menu:
 
- Three options for the menu:
+Three options for the menu:
 
- 1. Start Game - Drawing mode where you can create pixel art
- 2. Clear Draw - Clears the entire drawing
- 3. About: Details about the project
+1. Start Game - Drawing mode where you can create pixel art
+2. Clear Draw - Clears the entire drawing
+3. About: Details about the project
 
- Navigation:  
+Navigation:
 
- 1. Joystick Up/Down - Navigate between menu items
- 2. Press the button to choose the current menu item.
- 3. Visual cursor indicator blinks to show selected option
+1. Joystick Up/Down - Navigate between menu items
+2. Press the button to choose the current menu item.
+3. Visual cursor indicator blinks to show selected option
 
- Draw Mode:
+Draw Mode:
 
- - The system goes into interactive drawing mode if the Start Game option is chosen:
+- The system goes into interactive drawing mode if the Start Game option is chosen:
 
- 1. Joystick->Cursor movement on an 8x8 matrix
- 2. Press the short button to cycle through the LED states at the cursor position.
- 3. Long Press (3 seconds)-> Exit to menu
+1. Joystick->Cursor movement on an 8x8 matrix
+2. Press the short button to cycle through the LED states at the cursor position.
+3. Long Press (3 seconds)-> Exit to menu
 
- LED Conditions:
- 1. OFF: The LED is not on.
- 2. FIXED: The LED is always on 
- 3. SLOW: The LED blinks slowly
- 4. FAST: The LED blinks quickly.
+LED Conditions:
+
+1. OFF: The LED is not on.
+2. FIXED: The LED is always on 
+3. SLOW: The LED blinks slowly
+4. FAST: The LED blinks quickly.
 
 Display Information (in Drawing mode):
 - "DRAW MODE"
