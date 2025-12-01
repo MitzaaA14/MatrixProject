@@ -2,14 +2,15 @@
 
  The laboratory matrix project created for the Introduction to Robotics course at the University of Bucharest's Faculty of Mathematics and Informatics in the Computer Science domain during the 2025–2026 academic year is included in this repository.  Code, implementation, explanations, and extra resources (pictures, test results, videos) are all included in each checkpoint.
 
- <details> <summary><h2> Checkpoint #1: LED Matrix Drawing System
 
- Matrix Draw is an LED drawing application that allows users to create pixel art on an 8x8 LED matrix using:
+<details> 
+<summary><h2> Checkpoint #1: LED Matrix Drawing System
 
- - The joystick controller
- - A menu system that is shown on an LCD screen;
- - several LED states (fixed, slow blink, fast blink)
- - A buzzer that provides audio feedback
+Matrix Draw is an LED drawing application that allows users to create pixel art on an 8x8 LED matrix using:
+- The joystick controller
+- A menu system that is shown on an LCD screen;
+- several LED states (fixed, slow blink, fast blink)
+- A buzzer that provides audio feedback
 
 # Task Requirements:
 Design and implement an interactive matrix project with the following features:
