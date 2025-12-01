@@ -1,7 +1,7 @@
 ## Matrix Draw Project
 Introduction to Robotics (2025-2026)
 
-This repository contains the Matrix Draw project developed for the Introduction to Robotics course during the 2025-2026 academic year at the Faculty of Mathematics and Informatics, University of Bucharest, Computer Science domain.
+This repo contains the laboratory matrix project developed for Introduction to Robotics course during 2025-2026 academic year at the Faculty of Mathematics and Informatics, University of Bucharest, Computer Science domain. Each checkpoint includes code, implementation, explanations and additional resources (images, experimental results, videos).
 
 <details>
 <summary><h2>Checkpoint #1 - LED Matrix Drawing System</h2></summary>
@@ -17,18 +17,18 @@ Matrix Draw is an LED drawing application that allows users to create pixel art 
 Design and implement an interactive matrix project with the following features:
 
 - Working 8x8 LED matrix controlled via joystick
-- LCD screen with menu navigation - Controlled by joystick when the player isn't currently in a game
+- LCD screen with menu navigation - Controlled by joystick when the player is not curently in a game
 - One interactive mode: "Start Game" - Allows player to draw on led matrix
 - External input that directly influences matrix output - Joystick
 - Multiple LED states with visual feedback - First button press **LED FIXED** , second button press **LED SLOW BLINKING**, third button press **LED FAST BLINKING**
-- Audio feedback for user actions
+- Audio feedback for user action
 
 # Components:
 
 - Arduino Uno
 - 8x8 LED Matrix
 - MAX7219
-- LCD Display (16x2) : Menu display and information
+- LCD Display : Menu display and information
 - Joystick Module : User input (menu navigation and drawing on matrix)
 - Buzzer : Audio feedback
 - Resistors : 220Ω for LCD and 100kΩ for matrix MAX7219	
@@ -66,9 +66,9 @@ Main Menu:
 
 Three options for the menu:
 
-1. Start Game -  Drawing mode where you can create pixel art
-2. Clear Draw -  Clears the entire drawing
-3. About -  Displays project information
+1. Start Game - Drawing mode where you can create pixel art
+2. Clear Draw - Clears the entire drawing
+3. About - Project information
 
 Navigation:
 
@@ -78,7 +78,7 @@ Navigation:
 
 Draw Mode:
 
--  Once "Start Game" is selected, the system enters interactive drawing mode:
+-  If option Start Game is selected, the system enters interactive drawing mode:
 
 Controls:
 1. Joystick->Move cursor on 8x8 matrix
@@ -96,7 +96,7 @@ Display Information (in Drawing mode):
 - Current cursor position (X, Y) and LED state
 
 Audio Feedback:
-The buzzer provides distinct tones for different actions:
+The buzzer provide distinct tones for different actions:
 
 -  Menu navigation
 -  Menu selection
@@ -106,14 +106,13 @@ The buzzer provides distinct tones for different actions:
 
 Visual Feedback:
 -  Cursor Blinking - Indicates current position in menu and draw mode
--  LCD Contrast - Adjusts for optimal visibility (normal/dim modes)
--  Matrix Blinking - Two independent blink rates for creative patterns
+-  LCD Contrast - Adjusts for optimal visibility
+-  Matrix Blinking - LED states for more crative draw
 
 System States:
 
 1. Splash Screen
--  Displays "Matrix Draw" and "Loading..." on startup
--  Duration: 1 second
+-  Displays message on startup for 1 seconds
 -  Automatically transitions to main menu
 
 2. Main Menu
@@ -144,19 +143,17 @@ Key Functions:
 -  clearAll() : Reset all LEDs to OFF state
 -  showAbout() : Display project information
 
-Non- Blocking Timing
+Non-Blocking Timing
 All timing operations use millis() to avoid blocking delays:
--  Independent blink timers for slow/fast LED states
+-  Blink timers for LED states
 -  Cursor blink timer for menu and draw mode
--  Debounce timers for joystick and button inputs
--  Duration timers for splash and message screens
+-  Timers for joystick and button inputs
+-  Timers for splash and message screens
 
 
-Physical Implementation Checkpoint #1
+# Physical Implementation Checkpoint #1
 
-Video Demonstration
+# Video Demonstration
 
-
-Matrix Draw successfully implements an interactive LED matrix drawing system with intuitive joystick control, multiple LED states, and comprehensive menu navigation. The project demonstrates proficiency in hardware integration, non- blocking programming techniques, and user interface design on embedded systems.
 
 </details>
