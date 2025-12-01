@@ -1,3 +1,10 @@
+/*
+  LED MATRIX PROJECT
+  CHECKPOINT #1
+  Drawing game using Joystick and LCD menu display
+*/
+
+
 #include <LiquidCrystal.h>
 #include "LedControl.h"
 
@@ -114,6 +121,7 @@ bool showingSplash = false;
 bool showingMessage = false;
 String messageText = "";
 
+// Initializes hardware and displays splash screen
 void setup() {
   pinMode(pinLcdContrast, OUTPUT);
   analogWrite(pinLcdContrast, lcdContrastNormal);
@@ -134,6 +142,7 @@ void setup() {
   lc.setIntensity(0, matrixIntensity);
   lc.clearDisplay(0);
   
+  // Initialize LED states to off
   for(int i = 0; i < matrixSize; i++) {
     for(int j = 0; j < matrixSize; j++) {
       ledState[i][j] = ledOff;
@@ -143,6 +152,7 @@ void setup() {
   lastVry = analogRead(pinJoystickVry);
 }
 
+// Main loop managing splash screen and game states
 void loop() {
   unsigned long currentTime = millis();
   
@@ -164,17 +174,19 @@ void loop() {
     return;
   }
   
-  // Update blink states
+  // Update slow blink state for LEDs
   if(currentTime - lastBlinkSlow >= blinkIntervalSlow) {
     blinkStateSlow = !blinkStateSlow;
     lastBlinkSlow = currentTime;
   }
   
+  // Update fast blink state for LEDs
   if(currentTime - lastBlinkFast >= blinkIntervalFast) {
     blinkStateFast = !blinkStateFast;
     lastBlinkFast = currentTime;
   }
   
+  // Update cursor blink for menu selection
   if(currentTime - lastCursorBlink >= cursorBlinkInterval) {
     cursorBlinkState = !cursorBlinkState;
     lastCursorBlink = currentTime;
@@ -184,6 +196,7 @@ void loop() {
     }
   }
   
+  // Route to appropriate state handler
   if(inGame) {
     gameLoop();
   } else {
@@ -191,6 +204,7 @@ void loop() {
   }
 }
 
+// Displays menu with current selection
 void showMenu() {
   analogWrite(pinLcdContrast, lcdContrastNormal);
   
@@ -200,6 +214,7 @@ void showMenu() {
   
   lcd.setCursor(0, 1);
   
+  // Display menu item with blinking cursor
   if(selectedMenu == menuStartGame) {
     if(cursorBlinkState) lcd.print(">"); else lcd.print(" ");
     lcd.print("Start Game");
@@ -214,12 +229,14 @@ void showMenu() {
   displayDrawing();
 }
 
+// Handles menu navigation and selection
 void menuLoop() {
   analogWrite(pinLcdContrast, lcdContrastNormal);
   
   static unsigned long lastAction = 0;
   unsigned long currentTime = millis();
   
+  // Debounce menu actions
   if(currentTime - lastAction < menuDebounce) {
     return;
   }
@@ -227,6 +244,7 @@ void menuLoop() {
   int vry = analogRead(pinJoystickVry);
   bool btn = (digitalRead(pinJoystickSelect) == LOW);
   
+  // Navigate up in menu
   if(vry < joystickThresholdLow && lastVry >= joystickThresholdLow) {
     selectedMenu--;
     if(selectedMenu < 0) selectedMenu = menuSize - 1;
@@ -235,6 +253,7 @@ void menuLoop() {
     tone(pinBuzzer, toneMenuNavigate, toneDurationMedium);
     lastAction = currentTime;
   }
+  // Navigate down in menu
   else if(vry > joystickThresholdHigh && lastVry <= joystickThresholdHigh) {
     selectedMenu++;
     if(selectedMenu >= menuSize) selectedMenu = 0;
@@ -246,6 +265,7 @@ void menuLoop() {
   
   lastVry = vry;
   
+  // Execute menu selection
   if(btn && currentTime - lastAction > buttonDebounce) {
     tone(pinBuzzer, toneMenuSelect, toneDurationMedium);
     
@@ -261,6 +281,7 @@ void menuLoop() {
   }
 }
 
+// Enters draw mode and initializes cursor
 void startGame() {
   analogWrite(pinLcdContrast, lcdContrastNormal);
   
@@ -273,6 +294,7 @@ void startGame() {
   updateDisplay();
 }
 
+// Handles cursor movement and LED state toggling
 void gameLoop() {
   analogWrite(pinLcdContrast, lcdContrastNormal);
   
@@ -286,9 +308,11 @@ void gameLoop() {
   int vry = analogRead(pinJoystickVry);
   bool btn = (digitalRead(pinJoystickSelect) == LOW);
   
+  // Handle cursor movement with debouncing
   if(currentTime - lastMove > moveDebounce) {
     bool moved = false;
     
+    // Move cursor horizontally
     if(vrx < joystickThresholdLow && cursorX > 0) {
       cursorX--;
       moved = true;
@@ -298,6 +322,7 @@ void gameLoop() {
       moved = true;
     }
     
+    // Move cursor vertically
     if(vry < joystickThresholdLow && cursorY > 0) {
       cursorY--;
       moved = true;
@@ -314,11 +339,13 @@ void gameLoop() {
     }
   }
   
+  // Track button press start time
   if(btn && !btnWasPressed) {
     btnPressStartTime = currentTime;
     btnWasPressed = true;
   }
   
+  // Check for long press to exit game
   if(btn && btnWasPressed) {
     if(currentTime - btnPressStartTime >= longPressDuration) {
       inGame = false;
@@ -332,6 +359,7 @@ void gameLoop() {
       static bool waitingToExit = true;
       exitStartTime = currentTime;
       
+      // Wait before returning to menu
       while(millis() - exitStartTime < exitDelay) {
         // Non-blocking wait
       }
@@ -341,6 +369,7 @@ void gameLoop() {
     }
   }
   
+  // Handle short press to cycle LED state
   if(!btn && btnWasPressed) {
     unsigned long pressDuration = currentTime - btnPressStartTime;
     
@@ -356,9 +385,11 @@ void gameLoop() {
   updateMatrix();
 }
 
+// Updates matrix display with current LED states
 void updateMatrix() {
   lc.clearDisplay(0);
   
+  // Render each LED based on its state
   for(int y = 0; y < matrixSize; y++) {
     for(int x = 0; x < matrixSize; x++) {
       bool shouldLight = false;
@@ -385,11 +416,13 @@ void updateMatrix() {
     }
   }
   
+  // Show cursor in draw mode
   if(inGame && cursorBlinkState) {
     lc.setLed(0, cursorY, cursorX, true);
   }
 }
 
+// Displays drawing on matrix in menu mode
 void displayDrawing() {
   lc.clearDisplay(0);
   
@@ -420,6 +453,7 @@ void displayDrawing() {
   }
 }
 
+// Updates LCD with cursor position and LED state
 void updateDisplay() {
   analogWrite(pinLcdContrast, lcdContrastNormal);
   
@@ -432,6 +466,7 @@ void updateDisplay() {
   lcd.print(cursorY);
   lcd.print(" ");
   
+  // Display current LED state at cursor
   switch(ledState[cursorY][cursorX]) {
     case ledOff:
       lcd.print("OFF");
@@ -448,6 +483,7 @@ void updateDisplay() {
   }
 }
 
+// Clears all LEDs from drawing
 void clearAll() {
   analogWrite(pinLcdContrast, lcdContrastDim);
   
@@ -466,6 +502,7 @@ void clearAll() {
   showingMessage = true;
 }
 
+// Displays about information
 void showAbout() {
   analogWrite(pinLcdContrast, lcdContrastNormal);
   
