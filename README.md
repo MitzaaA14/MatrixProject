@@ -20,7 +20,7 @@ Design and implement an interactive matrix project with the following features:
 - LCD screen with menu navigation - Controlled by joystick when the player isn't currently in a game
 - One interactive mode: "Start Game" - Allows player to draw on led matrix
 - External input that directly influences matrix output - Joystick
-- Multiple LED states with visual feedback - First button press - - LED FIXED- - , second button press - - LED SLOW BLINKING- - , third button press - - LED FAST BLINKING- - 
+- Multiple LED states with visual feedback - First button press **LED FIXED** , second button press **LED SLOW BLINKING**, third button press **LED FAST BLINKING**
 - Audio feedback for user actions
 
 # Components:
