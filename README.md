@@ -1,5 +1,6 @@
 ## Matrix Draw Project
 Introduction to Robotics (2025-2026)
+
 This repository contains the Matrix Draw project developed for the Introduction to Robotics course during the 2025-2026 academic year at the Faculty of Mathematics and Informatics, University of Bucharest, Computer Science domain.
 
 <details>
