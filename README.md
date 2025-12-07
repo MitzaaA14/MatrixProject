@@ -370,6 +370,17 @@ Sensor Integration:
 
 Setup Photos:
 
+<img width="1458" height="664" alt="Screenshot 2025-12-08 at 01 18 48" src="https://github.com/user-attachments/assets/7133e7cb-c41f-4a8a-be4a-d87c3ee06e69" />
+<img width="462" height="372" alt="Screenshot 2025-12-08 at 01 18 30" src="https://github.com/user-attachments/assets/8694de8f-ab44-4fed-a520-1b52b1cbd6b0" />
+<img width="781" height="534" alt="Screenshot 2025-12-08 at 01 19 05" src="https://github.com/user-attachments/assets/88f195d9-bb4e-4b68-999d-e60595cf37ea" />
+<img width="1114" height="819" alt="Screenshot 2025-12-08 at 01 19 46" src="https://github.com/user-attachments/assets/1b544d1a-290f-472a-89d5-62d4bd6b17bb" />
+<img width="1114" height="819" alt="Screenshot 2025-12-08 at 01 19 39" src="https://github.com/user-attachments/assets/b4283da8-43c0-4aed-809a-36907ebe5281" />
+<img width="1114" height="819" alt="Screenshot 2025-12-08 at 01 19 33" src="https://github.com/user-attachments/assets/1a765a73-ef44-4d89-82c0-9697a00a1870" />
+<img width="1114" height="819" alt="Screenshot 2025-12-08 at 01 19 24" src="https://github.com/user-attachments/assets/2edeaeab-9b3c-4a5b-a566-c479c563fa95" />
+
+
+
+
 Video Demonstration: https://youtu.be/d0ZnUgxy8m8?si=SY6sl1CiGXIer6cr
 
 </details>
