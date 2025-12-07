@@ -19,7 +19,7 @@ Design and implement an interactive matrix project with the following features:
 - LCD screen with menu navigation - Controlled by joystick when the player is not curently in a game
 - One interactive mode: "Start Game" - Allows player to draw on led matrix
 - External input that directly influences matrix output - Joystick
-- Multiple LED states with visual feedback - First button press **LED FIXED** , second button press **LED SLOW BLINKING**, third button press **LED FAST BLINKING**
+- Multiple LED states with visual feedback - First button press LED FIXED , second button press LED SLOW BLINKING, third button press LED FAST BLINKING
 - Audio feedback for user action
 
 # Components:
@@ -159,5 +159,217 @@ To prevent blocking delays, millis() is used in all timing operations:
 # Video Demonstration
 
  https://youtu.be/-X2TxVpON-k?si=WHG6nfVh5Rvq6QeS
+
+</details>
+
+<details>
+
+<summary><h2> Checkpoint #2: Battleships</h2></summary>
+
+### Task Requirements:
+
+- Create a matrix project with sensor and joystick interaction.
+- Build a working LCD Screen navigated via joystick.
+- Checkpoint 2 Goal (as declared): Implement map logic and ship placement system for the Battleship game.
+
+### Project Overview
+
+This is a two-player implementation of the classic Battleship game using Arduino hardware. Each player uses a joystick to place their 5 ships on a virtual 8x16 LED matrix grid and will later attack the opponent's fleet.
+
+Team Members: https://github.com/filip407 & https://github.com/MitzaaA14
+
+### Components Used
+
+- Arduino Uno
+- 4x 8x8 LED Matrix with MAX7219 driver (cascaded horizontally)
+- 16x2 LCD Display with I2C interface
+- Joystick module
+- Buzzer
+- Button
+- 220Ω resistor
+- 100kΩ resistors for MAX7219 drivers
+- 4x 104pF Capacitor
+- 4x 10μF Capacitor
+- Wires and breadboard
+
+Pin Configuration:
+
+| Component / Function | Signal / Pin | Arduino Pin |
+|-------------------------------|----------------------|--------------|
+| LED Matrices (MAX7219) | DIN | D12 |
+| | CLK | D11 |
+| | CS (LOAD) | D10 |
+| LCD Display (I2C - 0x27) | SDA | A4 |
+| | SCL | A5 |
+| Other Components | Buzzer | D6 |
+| | Pause Button | D7 |
+| Player 1 Joystick | X-axis (VRX) | A0 |
+| | Y-axis (VRY) | A1 |
+| | Button (SW) | D2 |
+| Player 2 Joystick | X-axis (VRX) | A2 |
+| | Y-axis (VRY) | A3 |
+| | Button (SW) | D3 |
+
+### Game Concept & Display Layout:
+
+The Battleship Grid System
+
+Each player will have two maps:
+
+1. Ships Map (8x16): Shows your own ships are and where the enemy has attacked you
+2. Attack Map (8x16): Shows where they have attacked the enemy (hits and misses).
+
+Physical Display Configuration
+
+Each player has 2 LED 8x8 matrices placed horizontally side by side, creating a 16x8 visible display. However, each map will be 8 columns x 16 rows logically. Since the physical display only shows 8 rows at once, players will be able to scroll vertically using the joystick to see all 16 rows.
+
+### System Features:
+
+Checkpoint 2 Implementation Status
+
+Checkpoint 1 focused on the basic hardware and project direction. Checkpoint 2 aimed to create the map logic and ship placement. Here's what has been completed:
+
+1. Ship Placement System
+
+5 Ships:
+
+- Carrier (5 cells)
+- Battleship (4 cells)
+- Cruiser (3 cells)
+- Submarine (3 cells)
+- Destroyer (2 cells)
+  
+Joystick Navigation:
+
+- Move the cursor around the 8x16 grid.
+  
+Ship Orientation Control:
+
+- Short press joystick button: Toggle horizontal <-> vertical
+- Visual feedback with orientation change beep .
+  
+Ship Placement:
+
+- Long press of the joystick button confirms placement
+- The ship blinks quickly before being placed before placement
+- A success sound plays if the placement is valid 
+- An error sound plays if the placement is invalid.
+  
+Collision Detection:
+
+- Ships cannot overlap
+- Ships cannot be placed outside the grid.
+- The cursor skips over existing ships.
+  
+Placement Order:
+
+- Players place one ship at a time.
+- The LCD shows how many ships are left to place.
+- The LCD shows the name and length of the current ship.
+- The game automatically moves to the next ship after a successful placement.
+
+2. Map System
+
+Dual Map Architecture:
+
+- Each player has two 8x16 maps stored separately
+- Ships Map: Stores ships positions
+- Attack Map: Records attacks (to be used in gameplay phase)
+  
+Cell States:
+
+- WATER = 0 // Empty cell
+- SHIP = 1 // Ship present
+- HIT = 2 // Ship hit by attack
+- MISS = 3 // Water hit by attack
+  
+Map Display:
+
+- Real-time rendering on LED matrices
+- Ships show as lit LEDs
+- Matrix 0: Columns 0-7
+- Matrix 1: Columns 8-15
+- Only 8 rows visible at once. Scrolling will be added to see the rest.
+
+3. Menu System
+
+Main Menu:
+
+- Start Game
+- About screen
+  
+Pause Menu:
+
+- Resume Game
+- Restart Game (clears maps and fleets)
+- Exit to Main Menu
+  
+Game Flow:
+
+- Intro message at the beginning
+- Player 1 placement phase
+- Player 2 placement phase
+- Map screen shows both fleets
+- Attack phase (to be implemented)
+
+4. Audio Feedback
+
+Imperial March Theme:
+
+- Complete 69-note sequence
+- Plays during menu screens
+- Automatically stops during gameplay
+  
+Sound Effects:
+
+- Cursor movement
+- Orientation toggle (2000 Hz)
+- Successful placement (1500 -> 2000 Hz dual tone)
+- Invalid placement error (300 Hz)
+
+5. Object-Oriented Architecture
+
+The code is structured using object-oriented programming:
+
+- Ship class: Manages individual ships (position, orientation, validation)
+- Map class: Stores and manages the 8x16 grid
+- Fleet class: Manages the 5 ships
+- Display class: Handles the LED matrix and LCD
+- Input class: Handles joystick and button inputs with debouncing
+- Audio class: Plays music and sound effects
+- Menu class: Manages the menu
+- GameController class: Controls the overall game logic.
+
+### What Needs to Be Implemented For The Final Project:
+
+Core Gameplay Mechanics:
+
+- Attack phase
+- Detect hits and misses with feedback
+- Track ship damage.
+- Detect when ships sink.
+- Detect victory (all enemy ships sunk).
+
+Complete Menu System:
+
+- Full Settings menu:
+- Control LCD brightness
+- Control Matrix brightness
+- Turn sound on/off
+- How to Play instructions screen
+
+Sensor Integration:
+
+- Integrate sensor in a game mechanic
+
+### Resources & References:
+
+- https://projecthub.arduino.cc/HiHiHiHiiHiiIiH/star-wars-on-a-buzzer-e70139
+
+### Media:
+
+Setup Photos:
+
+Video Demonstration: https://youtu.be/d0ZnUgxy8m8?si=SY6sl1CiGXIer6cr
 
 </details>
