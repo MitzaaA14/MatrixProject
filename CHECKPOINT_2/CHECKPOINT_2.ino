@@ -92,7 +92,7 @@ const int loopDelay = 20;
 const int playerOne = 1;
 const int playerTwo = 2;
 
-// matrix indices
+// matrix indexes
 const int matrixP1Start = 0;
 const int matrixP2Start = 2;
 
@@ -364,7 +364,7 @@ class Input {
               joyHoldStart(initialPos), buttonWasPressed(false), buttonPressStart(initialPos), 
               pauseWasPressed(false) {}
 
-    // reads joystick with repeat for menu navigation
+    // reads joystickfor menu navigation
     void readJoystickRepeatMenu(int pinX, int pinY, int &dx, int &dy) {
       dx = dirNeutral; 
       dy = dirNeutral;
@@ -723,7 +723,7 @@ class GameController {
 
     int cursorX, cursorY;
     
-    // Non-blocking delay variables
+    // non-blocking delay variables
     unsigned long transitionStartTime;
     bool waitingForTransition;
     GameState nextStateAfterWait;
