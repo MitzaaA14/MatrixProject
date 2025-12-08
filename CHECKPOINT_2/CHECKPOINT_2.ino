@@ -645,6 +645,9 @@ const Audio::Note Audio::imperialSeq[] = {
 };
 const int Audio::imperialLen = sizeof(Audio::imperialSeq) / sizeof(Audio::Note);
 
+// forward declaration
+class Audio;
+
 // menu class - handles menu display and navigation
 class Menu {
   private:
@@ -694,10 +697,11 @@ class Menu {
     }
 
     // navigates menu in given direction
-    void navigate(int direction) {
+    void navigate(int direction, Audio* audio) {
       int maxItems = isPauseMenu ? menuItemsPause : itemCount;
       selection = (selection + direction + maxItems) % maxItems;
       updateSelection();
+      audio->beepHigh();
     }
 
     int getSelection() const { return selection; }
@@ -813,10 +817,11 @@ class GameController {
       int dx, dy;
       dx = dy = dirNeutral;
       input->readJoystickRepeatMenu(pinJoy1X, pinJoy1Y, dx, dy);
-      if (dy != dirNeutral) menu->navigate(dy);
+      if (dy != dirNeutral) menu->navigate(dy, audio);
 
       int btn = input->checkButtonPress(pinJoy1Btn);
       if (btn == btnShortPress) {
+        audio->playSuccess(); 
         input->resetButtonState();
         switch (menu->getSelection()) {
           case 0: state = GAME_INIT; break;
@@ -826,6 +831,7 @@ class GameController {
 
       int pauseBtn = input->checkPauseButton();
       if (pauseBtn == btnShortPress) {
+        audio->beepHigh(); 
         stateBeforePause = state;
         state = MENU_PAUSE;
         menu->showPauseMenu();
@@ -837,10 +843,11 @@ class GameController {
       int dx, dy; 
       dx = dy = dirNeutral;
       input->readJoystickRepeatMenu(pinJoy1X, pinJoy1Y, dx, dy);
-      if (dy != dirNeutral) menu->navigate(dy);
+      if (dy != dirNeutral) menu->navigate(dy, audio);
 
       int btn = input->checkButtonPress(pinJoy1Btn);
       if (btn == btnShortPress) {
+        audio->playSuccess(); 
         input->resetButtonState();
         switch (menu->getSelection()) {
           case 0:
@@ -872,12 +879,14 @@ class GameController {
     void handleAbout() {
       int btnState = input->checkButtonPress(pinJoy1Btn);
       if (btnState == btnShortPress) {
+        audio->beepHigh(); 
         input->resetButtonState();
         state = MENU_MAIN;
         menu->show();
       }
       int pauseBtn = input->checkPauseButton();
       if (pauseBtn == btnShortPress) {
+        audio->beepHigh(); 
         stateBeforePause = state;
         state = MENU_PAUSE;
         menu->showPauseMenu();
