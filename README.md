@@ -596,12 +596,25 @@ Game Features
 
 ## Media
 
-### Circuit Schema
+### Circuit Schema (without LCD)
+
+<img width="720" height="436" alt="Screenshot 2025-12-15 at 13 39 10" src="https://github.com/user-attachments/assets/32dc3494-adf7-4392-9189-778a6aaa5f0e" />
+
 
 ### Physical Implementation 
 
-### Video Demonstration
+<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 40 00" src="https://github.com/user-attachments/assets/508f476a-f87a-4ef9-88e3-1fa7b9ae59d3" />
+<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 40 05" src="https://github.com/user-attachments/assets/b831f49e-4ce8-4e0a-987f-45e03c37ca86" />
+<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 39 29" src="https://github.com/user-attachments/assets/e68e7361-6cf7-422c-a7e8-27a0bd81a228" />
+<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 39 38" src="https://github.com/user-attachments/assets/4bbffb2f-e4ef-4a58-93df-37ffba781dee" />
+<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 39 43" src="https://github.com/user-attachments/assets/90b3b16e-a350-4ad8-8ff8-590ce15c72a9" />
+<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 39 48" src="https://github.com/user-attachments/assets/a98c21d7-ed3c-4257-8532-bb5b1ba3aa53" />
+<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 39 55" src="https://github.com/user-attachments/assets/38b2864f-0b1b-4e5b-b7a7-68dd8faa3285" />
 
+
+
+### Video Demonstration
+https://youtu.be/mqJJkp_8x_U?si=rNrnJzHELUI57RCK
 
 </details>
 
