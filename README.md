@@ -742,9 +742,13 @@ MyShips:5 Tgt:7 -> Your ships alive vs Enemy targets left
 ### LED Matrix Display
 
 Water - empty
+
 Ship - fixed LED - in your own map 
+
 Hit - fixed LED - in enemy map
+
 Miss - LED blinks - in enemy map
+
 Cursor - LED fast blink
 
 
