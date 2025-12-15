@@ -510,10 +510,12 @@ class GameController {
 
 Memory Management
 
-### EEPROM Layout (1KB total)
+### EEPROM Layout
 
 Address 0-9:   GameSettings struct
-Address 10:    Player count 
+
+Address 10:    Player count
+ 
 Address 11+:   PlayerRecord array:
                - name (3 chars + null )
                - win count (int)
