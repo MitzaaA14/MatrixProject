@@ -568,7 +568,8 @@ Game Features
 - **How to Play**: Interactive tutorial
 - **Leaderboard**: Top 5 players by wins
 - **About**: Shows game name, authors names and github usernames
-  For each menu option a picture appears on each matrix.
+
+For each menu option a picture appears on each matrix.
 
 ### Display Optimization
 - Bit reversal for correct LED matrix orientation
@@ -675,7 +676,7 @@ Each player has **two screens**:
 - **Ships View**: Your fleet
 - **Attack View**: Your attacks on enemy (hits/misses)
 
-**Toggle between views:** Push joystick up/down at screen edge
+**Toggle between views:** Push joystick to the right at screen edge
 
 ### Attack Method 1: Standard Fire
 
