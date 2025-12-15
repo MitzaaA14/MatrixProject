@@ -735,6 +735,7 @@ Game Screen Info
 ### LCD Display During Combat
 
 JOE TURN S:2 -> Current player + airstrikes remaining
+
 MyShips:5 Tgt:7 -> Your ships alive vs Enemy targets left
 
 
