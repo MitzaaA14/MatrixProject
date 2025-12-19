@@ -66,18 +66,18 @@ Major Changes:
 
 Placement Mechanics:
 
-Short button press: Toggle ship orientation (horizontal <-> vertical)
-Long button press: Confirm placement
-Ship blinks rapidly before placement to show preview
-Success/error sound effects for feedback
-Cursor automatically skips over placed ships
+- Short button press: Toggle ship orientation (horizontal <-> vertical)
+- Long button press: Confirm placement
+- Ship blinks rapidly before placement to show preview
+- Success/error sound effects for feedback
+- Cursor automatically skips over placed ships
 
 Menu System:
 
-Main Menu: Start Game, About
-Pause Menu: Resume, Restart, Exit
-Imperial March theme music (69-note sequence) during menu screens
-Music automatically stops during gameplay
+- Main Menu: Start Game, About
+- Pause Menu: Resume, Restart, Exit
+- Imperial March theme music (69-note sequence) during menu screens
+- Music automatically stops during gameplay
 
 https://youtu.be/d0ZnUgxy8m8?si=SY6sl1CiGXIer6cr
 
@@ -85,19 +85,19 @@ https://youtu.be/d0ZnUgxy8m8?si=SY6sl1CiGXIer6cr
 The final implementation transformed the project into a fully playable game with advanced mechanics and persistent data:
 Combat System:
 
-Turn-based attack mechanics with hit/miss detection
-Smart turn rule: Hitting a ship grants another turn (chain attacks possible)
-View switching: Players toggle between Ships View (own fleet) and Attack View (enemy attacks)
-Visual feedback: Solid LED for hits, blinking LED for misses
-Audio feedback: Rising tone for hits, low buzz for misses
+- Turn-based attack mechanics with hit/miss detection
+- Smart turn rule: Hitting a ship grants another turn (chain attacks possible)
+- View switching: Players toggle between Ships View (own fleet) and Attack View (enemy attacks)
+- Visual feedback: Solid LED for hits, blinking LED for misses
+- Audio feedback: Rising tone for hits, low buzz for misses
 
 
 
-Player profile system: 3-character names saved permanently
-Win tracking across sessions
-Leaderboard: Top 5 players sorted by wins
-Settings persistence: Brightness levels and sound preferences
-Profile selection/creation at game start
+- Player profile system: 3-character names saved permanently
+- Win tracking across sessions
+- Leaderboard: Top 5 players sorted by wins
+- Settings persistence: Brightness levels and sound preferences
+- Profile selection/creation at game start
 
 
 Features:
@@ -347,30 +347,24 @@ For each menu option a picture appears on each matrix.
 
 ### Circuit Schema (without LCD)
 
-<img width="720" height="436" alt="Screenshot 2025-12-15 at 13 39 10" src="https://github.com/user-attachments/assets/32dc3494-adf7-4392-9189-778a6aaa5f0e" />
+<img width="720" height="436" alt="Screenshot 2025-12-15 at 13 39 10" src="https://github.com/user-attachments/assets/2467daa8-703e-43a4-852b-6575cac0a28f" />
 
 
 ### Physical Implementation 
 
-<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 40 00" src="https://github.com/user-attachments/assets/508f476a-f87a-4ef9-88e3-1fa7b9ae59d3" />
-
-<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 40 05" src="https://github.com/user-attachments/assets/b831f49e-4ce8-4e0a-987f-45e03c37ca86" />
-
-<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 39 29" src="https://github.com/user-attachments/assets/e68e7361-6cf7-422c-a7e8-27a0bd81a228" />
-
-<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 39 38" src="https://github.com/user-attachments/assets/4bbffb2f-e4ef-4a58-93df-37ffba781dee" />
-
-<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 39 43" src="https://github.com/user-attachments/assets/90b3b16e-a350-4ad8-8ff8-590ce15c72a9" />
-
-<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 39 48" src="https://github.com/user-attachments/assets/a98c21d7-ed3c-4257-8532-bb5b1ba3aa53" />
-
-<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 39 55" src="https://github.com/user-attachments/assets/38b2864f-0b1b-4e5b-b7a7-68dd8faa3285" />
+<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 39 55" src="https://github.com/user-attachments/assets/ce5be340-7c48-4042-88f2-89b05ffff844" />
+<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 40 05" src="https://github.com/user-attachments/assets/3750327d-e96b-4e63-8e63-9d4815a0350a" />
+<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 40 00" src="https://github.com/user-attachments/assets/c71f9e65-e519-426b-90af-370b59c336cb" />
+<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 39 48" src="https://github.com/user-attachments/assets/e8108a7b-61a0-4b45-b131-b86945ff66f8" />
+<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 39 43" src="https://github.com/user-attachments/assets/0826ca67-bd6d-49d0-9693-3a217cdb5a1e" />
+<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 39 38" src="https://github.com/user-attachments/assets/4565cd52-7c04-450c-9bf5-65993476c64c" />
+<img width="567" height="762" alt="Screenshot 2025-12-15 at 13 39 29" src="https://github.com/user-attachments/assets/bfe07e93-ae6f-4f16-912c-1ac723ee274d" />
 
 
 
 ### Video Demonstration
-
 https://youtu.be/mqJJkp_8x_U?si=rNrnJzHELUI57RCK
+
 </details>
 </details>
 </details>
@@ -529,11 +523,11 @@ Customize your experience:
 <details>
 <summary><h3>Hardware Prototyping & Drawing Tool</h3></summary> 
 
-<img width="579" height="760" alt="Screenshot 2025-12-01 at 17 08 52" src="https://github.com/user-attachments/assets/8477afb4-51f0-4208-9ad7-c85690e8ece6" />
+ <img width="579" height="760" alt="Screenshot 2025-12-01 at 17 08 52" src="https://github.com/user-attachments/assets/01a629b1-9923-46c8-b44b-fe097cb98cfc" />
+<img width="973" height="736" alt="Screenshot 2025-12-01 at 17 09 09" src="https://github.com/user-attachments/assets/27083cab-27c3-4609-a323-797309403cc5" />
+<img width="973" height="736" alt="Screenshot 2025-12-01 at 17 09 03" src="https://github.com/user-attachments/assets/46d2fe92-8cc6-48f9-b14a-f9fc53d87029" />
 
-<img width="973" height="736" alt="Screenshot 2025-12-01 at 17 09 03" src="https://github.com/user-attachments/assets/327b9e30-196e-42ad-b16f-e699a9f0a0e0" />
 
-<img width="973" height="736" alt="Screenshot 2025-12-01 at 17 09 09" src="https://github.com/user-attachments/assets/43beabde-8739-4edf-8c3e-44b6f6cf6b82" />
 
 # Video Demonstration
 
@@ -544,19 +538,14 @@ Customize your experience:
 <details>
 <summary><h3>Game Logic</h3></summary> 
  
-<img width="1458" height="664" alt="Screenshot 2025-12-08 at 01 18 48" src="https://github.com/user-attachments/assets/7133e7cb-c41f-4a8a-be4a-d87c3ee06e69" />
+ <img width="1458" height="664" alt="Screenshot 2025-12-08 at 01 18 48" src="https://github.com/user-attachments/assets/d85ee0b9-e76c-4321-8128-8ea10c74ba48" />
+<img width="462" height="372" alt="Screenshot 2025-12-08 at 01 18 30" src="https://github.com/user-attachments/assets/0c369225-f282-4a2a-9bfa-ec2fe6127341" />
+<img width="1114" height="819" alt="Screenshot 2025-12-08 at 01 19 46" src="https://github.com/user-attachments/assets/e66b09d7-6445-4b75-ad58-b00b74a9af31" />
+<img width="1114" height="819" alt="Screenshot 2025-12-08 at 01 19 39" src="https://github.com/user-attachments/assets/5dcc2d3a-6af6-4047-8b80-51c17befe0c7" />
+<img width="1114" height="819" alt="Screenshot 2025-12-08 at 01 19 33" src="https://github.com/user-attachments/assets/7b35cfea-f8fb-42c0-b034-4c9545b37834" />
+<img width="1114" height="819" alt="Screenshot 2025-12-08 at 01 19 24" src="https://github.com/user-attachments/assets/f1e9b424-170f-4154-b0f1-8d9a5c2abb14" />
+<img width="781" height="534" alt="Screenshot 2025-12-08 at 01 19 05" src="https://github.com/user-attachments/assets/6f9f187c-dde8-4d5c-b8f7-5caef9ce4fd1" />
 
-<img width="462" height="372" alt="Screenshot 2025-12-08 at 01 18 30" src="https://github.com/user-attachments/assets/8694de8f-ab44-4fed-a520-1b52b1cbd6b0" />
-
-<img width="781" height="534" alt="Screenshot 2025-12-08 at 01 19 05" src="https://github.com/user-attachments/assets/88f195d9-bb4e-4b68-999d-e60595cf37ea" />
-
-<img width="1114" height="819" alt="Screenshot 2025-12-08 at 01 19 46" src="https://github.com/user-attachments/assets/1b544d1a-290f-472a-89d5-62d4bd6b17bb" />
-
-<img width="1114" height="819" alt="Screenshot 2025-12-08 at 01 19 39" src="https://github.com/user-attachments/assets/b4283da8-43c0-4aed-809a-36907ebe5281" />
-
-<img width="1114" height="819" alt="Screenshot 2025-12-08 at 01 19 33" src="https://github.com/user-attachments/assets/1a765a73-ef44-4d89-82c0-9697a00a1870" />
-
-<img width="1114" height="819" alt="Screenshot 2025-12-08 at 01 19 24" src="https://github.com/user-attachments/assets/2edeaeab-9b3c-4a5b-a566-c479c563fa95" />
 
 Video Demonstration: https://youtu.be/d0ZnUgxy8m8?si=SY6sl1CiGXIer6cr
 
