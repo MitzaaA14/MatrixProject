@@ -397,7 +397,6 @@ Phase 1: Player Setup
 2. Select or create 3 letter name for Player 1
 3. Select or create 3 letter name for Player 2
 
-Names are saved and track your wins!
 
 Phase 2: Fleet Deployment
 
@@ -528,7 +527,7 @@ Customize your experience:
 </details>
 
 <details>
-<summary><h1>Project Progess Images and Videos</h1></summary>
+<summary><h1>Project Progress Images and Videos</h1></summary>
 
 <details>
 <summary><h3>Hardware Prototyping & Drawing Tool</h3></summary> 
