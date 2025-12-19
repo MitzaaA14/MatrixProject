@@ -344,7 +344,6 @@ For each menu option a picture appears on each matrix.
 
 <details>
  <summary><h3>Media</h3></summary>
-## Media
 
 ### Circuit Schema (without LCD)
 
