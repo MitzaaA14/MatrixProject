@@ -83,9 +83,8 @@ https://youtu.be/d0ZnUgxy8m8?si=SY6sl1CiGXIer6cr
 
 3. Complete Gameplay & Advanced Features
 The final implementation transformed the project into a fully playable game with advanced mechanics and persistent data:
-Combat System:
 
-- Turn-based attack mechanics with hit/miss detection
+- Combat System: Turn-based attack mechanics with hit/miss detection
 - Smart turn rule: Hitting a ship grants another turn (chain attacks possible)
 - View switching: Players toggle between Ships View (own fleet) and Attack View (enemy attacks)
 - Visual feedback: Solid LED for hits, blinking LED for misses
