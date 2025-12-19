@@ -378,7 +378,7 @@ https://youtu.be/mqJJkp_8x_U?si=rNrnJzHELUI57RCK
 <details>
 <summary><h1>How to Play</h1></summary>
 
-Game Objective
+## Game Objective
 
 Sink all 7 enemy ships before they sink yours!
 
@@ -391,14 +391,14 @@ Each player deploys:
 
 Total: 7 ships
 
-Phase 1: Player Setup
+## Phase 1: Player Setup
 
 1. Main Menu -> Start Game
 2. Select or create 3 letter name for Player 1
 3. Select or create 3 letter name for Player 2
 
 
-Phase 2: Fleet Deployment
+## Phase 2: Fleet Deployment
 
 Both players place ships simultaneously on their 8x16 grids.
 
@@ -421,7 +421,7 @@ Both players place ships simultaneously on their 8x16 grids.
 - Fixed LEDs = confirmed ships
 - Beep = success and Buzz = error
 
-Phase 3: Combat
+## Phase 3: Combat
 
 ### View Switching
 Each player has two screens:
@@ -468,7 +468,7 @@ Limitations:
 - Cannot recover used airstrikes
 - Counter shown on LCD
 
-Phase 4: Victory
+## Phase 4: Victory
 
 ### Win Condition
 Destroy all 7 enemy ships
@@ -480,9 +480,6 @@ Destroy all 7 enemy ships
 - Win count saved to leaderboard
 - Press any button to return to menu
 
-
-
-Game Screen Info
 
 ### LCD Display During Combat
 
